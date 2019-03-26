@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Burger Time</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+<link rel="stylesheet" href="css/burger_style.css">
+<!-- <script src="javascript/app.js"></script> -->
+</head>
+<body>
+    <div id="header" class="jumbotron">
+        <img id="burger-pic" src="images/photo-1534790566855-4cb788d389ec.jpeg">
+        <h1>Burger Time</h1>
+      </div>
+      <div class="container">
+          <div id="content-area" class="row">
+              <div id="un-eaten" class="col-md-6">
+                 <h2>Burgers to Eat</h2>
+                 <ol id="burgerEat">
+
+                 </ol>
+              </div>
+              <div id="eaten" class="col-md-6">
+                 <h2>Burgers Already Eaten</h2>
+                 <ol id="burgerEaten">
+                 </ol>
+                 <button class="btn btn-primary" id="delete_eaten">Delete Devoured</button>
+              </div>
+          </div>
+          <!-- {{!-- flex to center form --}} -->
+          <div class="d-flex justify-content-center">
+              <div class="row">
+                  <div id="form-area" class="col-md-12" >
+                      <form>
+                          <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Enter your Favorite Burger</label>
+                              <textarea class="form-control" id="burger_name" rows="3"></textarea>
+                          </div>
+                          <button type="submit" id="add-burger" class="btn btn-primary">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+    <script src="javascript/app.js"></script>
+</body>
+</html>

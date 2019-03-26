@@ -1,0 +1,20 @@
+#burger-pic {
+    border-radius: 90%;
+    height: 200px;
+}
+#header {
+    text-align: center;
+}
+/* center the page */
+
+li {
+    padding: 10px;
+    /* display: inline-block; */
+}
+.devour {
+    display: inline-block;
+    margin-left: 30px;
+}
+#eaten {
+    color: grey;
+}
