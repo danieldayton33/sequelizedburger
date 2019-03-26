@@ -1,3 +1,6 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 #burger-pic {
     border-radius: 90%;
     height: 200px;
@@ -5,16 +8,26 @@
 #header {
     text-align: center;
 }
-/* center the page */
+#content-area {
+    border: 5px solid black;
+    padding: 10px; 
+}
+h1 ,h2 {
+    font-family: 'Permanent Marker', cursive; 
+    text-align: center;
+}
 
 li {
     padding: 10px;
     /* display: inline-block; */
 }
 .devour {
-    display: inline-block;
-    margin-left: 30px;
+    float: right;
 }
 #eaten {
     color: grey;
+}
+#delete_eaten {
+    /* position: relative; */
+    float: right;
 }
