@@ -1,7 +1,5 @@
 $(document).on("ready",function(){
-    // $.get("/burgers",(data)=>{
-    //     console.log(data);
-    // });
+//get burgers from database, call addBurgers   
 const getBurgers = ()  =>{
     $("#burgerEat").empty();
     $("#burgerEaten").empty();
@@ -11,15 +9,19 @@ const getBurgers = ()  =>{
     });
 }    
 getBurgers();
+
+//add the burgers from the database to the DOM lists
 const addBurgers = (burgers) => {
     console.log("ARRAY FROM addBurgers", burgers);
     burgers.forEach(burger =>{
+       //if statement to check status of burger (eaten or not)
         if(burger.devoured) {
             let newLi = $("<li>").text(burger.burger_name);
             $("#burgerEaten").append(newLi);
         }
         else {
             let newLi = $("<li>").text(burger.burger_name);
+        //add button to be able to change the status of the burger, attach id to button as data-id
             let newButton = $("<button>")
             newButton.addClass("btn btn-danger devour");
             newButton.attr("data-id", burger.id);
@@ -29,6 +31,7 @@ const addBurgers = (burgers) => {
         }
     });
 }
+//form submit for posting new burger entry
 $("#add-burger").on("click",(e)=>{
     e.preventDefault();
     const burgerName = $("#burger_name").val().trim();
@@ -36,6 +39,7 @@ $("#add-burger").on("click",(e)=>{
     const burgerObj ={
         burger_name: burgerName
     };
+    ///post request for adding burger to database
     $.post("/api/burgers", burgerObj,(data)=>{
       
         console.log(data);
@@ -44,7 +48,7 @@ $("#add-burger").on("click",(e)=>{
     });
    
 });
-
+//on-click event for removing all eaten burgers
 $("#delete_eaten").on("click", (e) => {
     $.ajax({
         method: "DELETE",
@@ -55,13 +59,14 @@ $("#delete_eaten").on("click", (e) => {
     });
 });
 
+//on-click event for changing the status of the burger
 $(document).on("click", ".devour", function(e) {
     console.log($(this))
     const burger = {
         id: $(this).attr("data-id"),
-        // devour: $(this).attr("data-eaten"),
         };
     console.log("ID", burger);
+    //put request to change the burger status using id in body
     $.ajax("/api/burgers", {
         type: "PUT",
         data: burger
